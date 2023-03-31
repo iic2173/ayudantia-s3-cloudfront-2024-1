@@ -94,7 +94,7 @@ Follow [these steps](https://docs.aws.amazon.com/cli/latest/userguide/getting-st
 1. Go to your Cloudfront distribution and copy its Domain Name.
 2. Go to your DNS and create a CNAME with your custom domain/domains and your cloudfront distribution domain name as its value.
 
-## Step 8: Update your frontent content.
+## Step 9: Update your frontent content.
 To update your frontend, you have to
 
 1. Build the changes `npm build`.

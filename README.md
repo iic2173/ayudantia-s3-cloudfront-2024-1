@@ -101,3 +101,31 @@ To update your frontend, you have to
 2. Upload the changes to your S3 bucket `aws s3 sync build/ s3://BUCKET --delete`.
 3. Invalidate the cache in Cloudfront `aws cloudfront create-invalidation --distribution-id YOUR_CLOUDFRONT_ID --paths "/*"`
 4. Check if the cache was invalidated `aws cloudfront get-invalidation --id INVALIDATION_ID --distribution-id DISTRIBUTION_ID`
+
+## Extra: Why should I use S3?
+In this example, we are using S3 to deploy an SPA, static website or any static assets, but, why should we use S3?. We can, for example, use EC2 or another service and setup a webserver (such as NGINX) to serve static assets or our SPA, but S3 has some advantages such as:
+
+1. Pricing:
+   1. Máquina propia (On premise): Demanda tener un computador/servidor corriendo 24/7 y podría fallar en casos de terremotos, incendios, etc. Presenta múltiples desafíos en los hay invertir para 'solucionar'.
+   2. [EC2: Se paga por](https://aws.amazon.com/ec2/pricing/on-demand/):
+      1. Arriendo de capacidad de procesamiento (CPU)
+      2. Ram
+      3. Disco duro fijo (Si uno usa 1GB, pero arrienga 50GB por la posibilidad de llegar a esa capacidad, se paga por los 50GB).
+      4. Transferencia de datos. (Cada vez que alguien ingresa a nuestro sitio)
+      5. Dirección IP
+      6. Otros.
+   3. [S3: Se paga por](https://aws.amazon.com/s3/pricing/):
+      1. Disco duro utilizado (Es flexible según demanda)
+      2. Existe la opción de pagar menos por espacio de memoria que se accede con menor frecuencia.
+      3. Transferencia de datos
+      4. Operaciones de BD (En caso de usar S3 como bdd NoSQL)
+      5. Otros
+2. Throughput/Capacidad de acceso
+   1. EC3:
+      1. Depende de la configuración del usuario.
+      2. En caso de necesitar más capacidad se debe escalar horizontal/verticalmente y configurar load balancers.
+   2. S3
+      1. Está optimizado para traspasar datos estáticos (sin necesitar alguna configuración propia). Con un solo S3 [aseguran soportar 5500 request por segundo](https://aws.amazon.com/about-aws/whats-new/2018/07/amazon-s3-announces-increased-request-rate-performance/)
+      2. En caso de necesitas más capacidad, se puede utilizar [Cloudfront](https://aws.amazon.com/cloudfront/pricing/) como Content Delivery Network.
+3. Ease of use
+4. More info [Here](https://aws.amazon.com/s3/)

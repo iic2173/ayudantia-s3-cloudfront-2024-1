@@ -53,7 +53,7 @@ This steps are not necessary if you already have your access keys.
 
 Follow [these steps](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) to install con configure.
 
-1. Install
+1. Install (only for Debian Based Systems) (If you are using Mac, use the link above)
     ```sh
     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
     unzip awscliv2.zip

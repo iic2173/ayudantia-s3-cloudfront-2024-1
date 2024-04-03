@@ -1,6 +1,6 @@
 # Frontend deployment
 
-We will deploy a SPA (Single Page Application) on AWS S3 with CDN (Content Delivery Network) and HTTPS enabled.
+We will deploy a SPA (Single Page Application) on AWS S3 with CDN (Content Delivery Network) and HTTPS enabled. 
 
 ## Step 1: Create a frontend project
 

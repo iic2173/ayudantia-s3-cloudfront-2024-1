@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to the Cloud Storage video for IIC2173 2024-1 version!
         </p>
         <a
           className="App-link"

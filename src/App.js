@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to the Cloud Storage video for IIC2173 2024-1 version!
+          Welcome to the Cloud Storage video for IIC2173 2024-1 version with a new update 2!
         </p>
         <a
           className="App-link"
